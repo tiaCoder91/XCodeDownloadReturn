@@ -23,24 +23,16 @@
 - (instancetype)init
 {
 	//[NSBundle loadNibNamed:@"myMain" owner:app];
-	// NSViewMinYMargin | NSViewWidthSizable |
-	
-	// ??????????????????????????????????????????????
-	/*
-	NSScreen *screen = [NSScreen mainScreen];
-	NSDictionary *description = [screen deviceDescription];
-	NSSize displayPixelSize = [[description objectForKey:NSDeviceSize] sizeValue];
-	CGSize displayPhysicalSize = CGDisplayScreenSize(
-		[[description objectForKey:@"NSScreenNumber"] unsignedIntValue]);
-	
-	NSLog(@"Screen width is %0.2f", displayPixelSize.width);
-	NSLog(@"Screen height is %0.2f", displayPixelSize.height);
-	*/
-	// ???????????????????????????????????????????????
 	
 	if (self = [super init]) {
+#pragma mark - Get screen size
+        NSScreen *screen = [NSScreen mainScreen];
+        NSDictionary *description = [screen deviceDescription];
+        NSSize displayPixelSize = [[description objectForKey:NSDeviceSize] sizeValue];
+        //CGSize displayPhysicalSize = CGDisplayScreenSize([[description objectForKey:@"NSScreenNumber"] unsignedIntValue]);
+        
 #pragma mark - Initialize NSWindow
-		NSRect frame = NSMakeRect(1400/2-500/2, 900/2-300/2, 500, 300);
+		NSRect frame = NSMakeRect(displayPixelSize.width/2-500/2, displayPixelSize.height/2-300/2, 500, 300);
 		NSWindow* window  = [[NSWindow alloc] initWithContentRect:frame
 			styleMask: NSWindowStyleMaskTitled | NSWindowStyleMaskMiniaturizable | NSWindowStyleMaskClosable | NSWindowStyleMaskResizable
 			backing:NSBackingStoreBuffered
@@ -76,6 +68,8 @@
         //_button.keyEquivalent = @"\r";
 		
 		_ok.title = @"Ok";
+        [_ok setTarget:label];
+        [_ok setAction:@selector(getText)];
 		//button1.keyEquivalent = @"\r";
 
 #pragma mark - Add View to NSView and NSWindow

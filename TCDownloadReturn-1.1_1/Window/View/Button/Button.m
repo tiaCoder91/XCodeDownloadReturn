@@ -26,7 +26,7 @@
 		self.bezelStyle = NSBezelStyleRounded;
 		
 		[self setTarget:self];
-		[self setAction:@selector(myMethodToCallOnClick:)];
+        [self setAction:@selector(myMethodToCallOnClick:)];
 	}
 	return self;
 }

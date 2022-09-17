@@ -8,5 +8,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface Text : NSTextView <NSTextViewDelegate>
-- (void)defaultSet;
+
 @end

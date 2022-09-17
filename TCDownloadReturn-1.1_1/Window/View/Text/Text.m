@@ -13,26 +13,22 @@
     if (self = [super init]) {
         NSLog(@"Initialize %@", self.class);
         
+        self = [[Text alloc] initWithFrame:NSMakeRect(10, 100, 200, 60)];
+        self.maxSize = NSMakeSize(200, 60);
         [self setDelegate:self];
-        
-        [self setFrame: NSMakeRect(10, 100, 200, 20)];
-        [self setEditable:NO];
-        [self setSelectable:NO];
-        [self setBackgroundColor: [NSColor yellowColor]];
+
+        //[self setEditable:NO];
+        //[self setSelectable:NO];
         
         [self setString:@"Hello world!"];
+        
+        
     }
     return self;
 }
 
-- (void)defaultSet {
-    [self setFrame: NSMakeRect(10, 100, 200, 20)];
-    
-    [self setEditable:NO];
-    [self setSelectable:NO];
-    [self setBackgroundColor: [NSColor yellowColor]];
-    
-    [self setString:@"Hello world!"];
+- (void)getText {
+    NSLog(@"Ok %@!", [[self textStorage] string]);
 }
 
 @end
