@@ -18,7 +18,7 @@
 {
     if (self = [super init])
     {
-        NSLog(@"Init in Interprete");
+        NSLog(@"Initializing class %@", self.class);
     }
     return self;
 }
@@ -98,10 +98,10 @@
                 {
                     cBit = [self scomponiStringa:sbit inizio:c];
                     NSString *hBit = [self convertData:cBit];
-                    //NSLog(@"1.  cb = %@ hBit = %@ %@", cb, hBit, cBit);
+                    NSLog(@"1.  cb = %@ hBit = %@ %@", cb, hBit, cBit);
                     if ([cb isEqualToString:hBit])
                     {
-                        //NSLog(@"et voila!!!!!!");
+                        NSLog(@"et voila!!!!!!");
                         bitInChar = [bitInChar stringByAppendingString:cBit];
                     }
                     c++;
@@ -116,10 +116,10 @@
                 {
                     cBit = [self scomponiStringa:sbit inizio:c];         // sbit è la stringa della chiave
                     NSString *hBit = [self convertData:cBit];
-                    //NSLog(@"2.  cb = %@ hBit %@ = %@", cb, hBit, cBit);
+                    NSLog(@"2.  cb = %@ hBit %@ = %@", cb, hBit, cBit);
                     if ([cb isEqualToString:hBit])
                     {
-                        //NSLog(@"et voila!!!!!!");
+                        NSLog(@"et voila!!!!!!");
                         bitInChar = [bitInChar stringByAppendingString:cBit];
                     }
                     c++;
@@ -158,10 +158,7 @@
             first_hex = [decode_hex substringWithRange:NSMakeRange(start, 1)];
             save_hex = [save_hex stringByAppendingString:first_hex];
         }
-        
-    
-        // IMPLEMENTAZIONE
-        // NSLog(@"save_hex %@", save_hex);  ---------------
+        NSLog(@"save %@ start %i", save_hex, start);
         result = [result stringByAppendingString:[self convertBit:save_hex]];
         
         if (start == lunghezza)
@@ -177,32 +174,18 @@
         }
         
     }
+    
+    // QUI FARGLI FARE L'ULTIMO CONTROLLO PER L'ULTIMO CARATTERE
+    int i = 0;
+    while (i < save_hex.length) {
+        NSLog(@"%@", [save_hex substringFromIndex:i]);
+        result = [result stringByAppendingString:[self convertBit:[save_hex substringFromIndex:i]]];
+        i++;
+    }
+    
+    NSLog(@"result : %@", result);
     return result;
 }
 
-#pragma mark - Call Selector
-- (void)callSelector:(NSString *)cs
-{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-method-access"
-    
-    if ([cs isEqualToString:@"Modifica file"] || [cs isEqualToString:@"modifica file"] || [cs isEqualToString:@"1"])
-    {
-        [self modFile];
-    }
-    else if ([cs isEqualToString:@"Youtube-dl"] || [cs isEqualToString:@"youtube-dl"] || [cs isEqualToString:@"2"])
-    {
-        [self youtubeManager];
-    }
-    
-#pragma clang diagnostic pop
-}
-
-#pragma mark - Dealloc
-- (void)dealloc
-{
-    NSLog(@"Dealloc Interprete");
-    [super dealloc];
-}
 
 @end

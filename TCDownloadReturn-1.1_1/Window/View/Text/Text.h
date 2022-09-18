@@ -5,8 +5,10 @@
 //  Created by Mattia Leggieri on 17/09/22.
 //
 
-#import <Cocoa/Cocoa.h>
+#import "../../../Interprete-1.0/Interprete1.0.h"
+//#import <Cocoa/Cocoa.h>
 
 @interface Text : NSTextView <NSTextViewDelegate>
-
+@property (nonatomic) Interprete *interprete;
+- (void)getText;
 @end

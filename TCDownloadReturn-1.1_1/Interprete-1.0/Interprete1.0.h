@@ -10,6 +10,7 @@
 @interface Interprete : NSObject
 - (NSString *)scriviTesto;
 - (NSString *)decode:(id)decode key:(NSString *)key;
-- (void)callSelector:(NSString *)cs;
+- (NSString *)convertData:(id)sds;
+- (NSString *)convertBit:(NSString *)cb;
 @end
 

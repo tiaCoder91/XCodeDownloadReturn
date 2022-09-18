@@ -18,6 +18,7 @@
 		124F311228CD3D87001FF374 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310128CD3D87001FF374 /* Button.m */; };
 		124F311328CD3D87001FF374 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310528CD3D87001FF374 /* View.m */; };
 		124F311528CD3D87001FF374 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310728CD3D87001FF374 /* Window.m */; };
+		128D28E628D76B3200194BEC /* Interprete1.0.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D28E428D76B3100194BEC /* Interprete1.0.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		124F310428CD3D87001FF374 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
 		124F310528CD3D87001FF374 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
 		124F310728CD3D87001FF374 /* Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
+		128D28E428D76B3100194BEC /* Interprete1.0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interprete1.0.m; sourceTree = "<group>"; };
+		128D28E528D76B3200194BEC /* Interprete1.0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interprete1.0.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +131,7 @@
 		124F30BE28CD3D5E001FF374 /* TCDownloadReturn-1.1_1 */ = {
 			isa = PBXGroup;
 			children = (
+				128D28E328D76AFF00194BEC /* Interprete-1.0 */,
 				124F30FA28CD3D87001FF374 /* main.m */,
 				124F30FC28CD3D87001FF374 /* Window */,
 				124F30C228CD3D62001FF374 /* Assets.xcassets */,
@@ -173,6 +177,15 @@
 				120A956028D5F314001F05C7 /* Text */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		128D28E328D76AFF00194BEC /* Interprete-1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				128D28E528D76B3200194BEC /* Interprete1.0.h */,
+				128D28E428D76B3100194BEC /* Interprete1.0.m */,
+			);
+			path = "Interprete-1.0";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,7 +250,7 @@
 		124F30B428CD3D5E001FF374 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
+				BuildIndependentTargetsInParallel = NO;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					124F30BB28CD3D5E001FF374 = {
@@ -305,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				124F311528CD3D87001FF374 /* Window.m in Sources */,
+				128D28E628D76B3200194BEC /* Interprete1.0.m in Sources */,
 				120A955E28D5EB36001F05C7 /* Text.m in Sources */,
 				124F311128CD3D87001FF374 /* TextField.m in Sources */,
 				124F311228CD3D87001FF374 /* Button.m in Sources */,
