@@ -1,6 +1,6 @@
-#import "TextField.h"
+#import "TCTextField.h"
 
-@implementation TextField
+@implementation TCTextField
 
 - (instancetype)init {
     if (self = [super init]) {

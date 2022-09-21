@@ -11,6 +11,7 @@
 @implementation Interprete
 {
     NSData *dataBase;
+    NSMutableArray *arrLine;
 }
 
 #pragma mark - Init
@@ -84,9 +85,15 @@
     
     NSArray *key = [bit allKeys];
     NSString *bitInChar = @"";
+
     
     for (int lKey = 0; lKey < key.count; lKey++)  // Conteggio chiavi del dizionario e passaggio delle stesse
     {
+        if ([cb isEqualToString:@"0a"]) {
+            //NSLog(@"Eccolo !!!!!!!");
+            return @"0a";
+        }
+        
         for (NSString *sbit in [bit objectForKey:key[lKey]])  // prende le stringhe nelle rispettive chiavi
         {
             //NSLog(@"sbit %@", sbit);
@@ -98,10 +105,10 @@
                 {
                     cBit = [self scomponiStringa:sbit inizio:c];
                     NSString *hBit = [self convertData:cBit];
-                    NSLog(@"1.  cb = %@ hBit = %@ %@", cb, hBit, cBit);
+                    //NSLog(@"1.  cb = %@ hBit = %@ %@", cb, hBit, cBit);
                     if ([cb isEqualToString:hBit])
                     {
-                        NSLog(@"et voila!!!!!!");
+                        //NSLog(@"et voila!!!!!!");
                         bitInChar = [bitInChar stringByAppendingString:cBit];
                     }
                     c++;
@@ -116,10 +123,10 @@
                 {
                     cBit = [self scomponiStringa:sbit inizio:c];         // sbit è la stringa della chiave
                     NSString *hBit = [self convertData:cBit];
-                    NSLog(@"2.  cb = %@ hBit %@ = %@", cb, hBit, cBit);
+                    //NSLog(@"2.  cb = %@ hBit %@ = %@", cb, hBit, cBit);
                     if ([cb isEqualToString:hBit])
                     {
-                        NSLog(@"et voila!!!!!!");
+                        //NSLog(@"et voila!!!!!!");
                         bitInChar = [bitInChar stringByAppendingString:cBit];
                     }
                     c++;
@@ -134,8 +141,9 @@
 
 // Per ora il metodo è ok ma potrebbe esserci bisogno di una modifica
 #pragma mark - Nuovo metodo decodifica
-- (NSString *)decode:(id)decode key:(NSString *)key
+- (NSArray *)decode:(id)decode
 {
+    /// STRINGA DI DATI IN ESADECIMALE
     NSString *decode_hex = @"";
     decode_hex = [self convertData:decode];
     
@@ -150,6 +158,9 @@
     NSString *save_hex = @"";
     NSString *result = @"";
     
+    /// SALVATAGGIO IN ARRAY CON LINEE FORMATTATE
+    arrLine = [[NSMutableArray alloc] init];
+    
     while (start < [decode_hex lengthOfBytesUsingEncoding:NSUTF8StringEncoding])
     {
         
@@ -158,8 +169,17 @@
             first_hex = [decode_hex substringWithRange:NSMakeRange(start, 1)];
             save_hex = [save_hex stringByAppendingString:first_hex];
         }
+        
         NSLog(@"save %@ start %i", save_hex, start);
-        result = [result stringByAppendingString:[self convertBit:save_hex]];
+        
+        if ([[self convertBit:save_hex] isEqualToString:@"0a"]) {
+            NSLog(@"result = %@  ***************", result);
+            [arrLine addObject:result];
+            result = @"";
+        } else {
+            result = [result stringByAppendingString:[self convertBit:save_hex]];
+        }
+        
         
         if (start == lunghezza)
         {
@@ -178,13 +198,20 @@
     // QUI FARGLI FARE L'ULTIMO CONTROLLO PER L'ULTIMO CARATTERE
     int i = 0;
     while (i < save_hex.length) {
-        NSLog(@"%@", [save_hex substringFromIndex:i]);
-        result = [result stringByAppendingString:[self convertBit:[save_hex substringFromIndex:i]]];
+        NSString *hexByte = [save_hex substringFromIndex:i];
+        NSLog(@"%@", hexByte);
+        if ([hexByte isNotEqualTo:@"0a"]) {
+            result = [result stringByAppendingString:[self convertBit:hexByte]];
+        }
         i++;
     }
     
+    [arrLine addObject:result];
+    
     NSLog(@"result : %@", result);
-    return result;
+    NSLog(@"arrLine : %@", arrLine);
+    
+    return arrLine;
 }
 
 

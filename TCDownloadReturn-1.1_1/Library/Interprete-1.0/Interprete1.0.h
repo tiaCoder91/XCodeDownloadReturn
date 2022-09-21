@@ -9,7 +9,7 @@
 
 @interface Interprete : NSObject
 - (NSString *)scriviTesto;
-- (NSString *)decode:(id)decode key:(NSString *)key;
+- (NSArray *)decode:(id)decode;
 - (NSString *)convertData:(id)sds;
 - (NSString *)convertBit:(NSString *)cb;
 @end

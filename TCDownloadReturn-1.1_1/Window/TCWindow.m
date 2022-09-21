@@ -1,16 +1,13 @@
-#import "Window.h"
-#import "View/View.h"
-#import "View/Button/Button.h"
-#import "View/Text/TextField.h"
-#import "View/Text/Text.h"
+#import "TCWindow.h"
 
-@interface Window()
-@property (nonatomic, readwrite) View *view;
-@property (nonatomic, readwrite) Button *cancel, *ok;
-@property (nonatomic, readwrite) TextField *textField;
+@interface TCWindow()
+@property (nonatomic, readwrite) TCView *view;
+@property (nonatomic, readwrite) TCButton *cancel, *ok;
+@property (nonatomic, readwrite) TCTextField *textField;
+@property (nonatomic, readwrite) TCText *label;
 @end
 
-@implementation Window {
+@implementation TCWindow {
     CGSize sizeText;
     CGPoint pointText;
     NSPoint textFieldPoint;
@@ -22,7 +19,6 @@
 
 - (instancetype)init
 {
-	//[NSBundle loadNibNamed:@"myMain" owner:app];
 	
 	if (self = [super init]) {
 #pragma mark - Get screen size
@@ -43,39 +39,44 @@
 		[window setDelegate: self];
 
 #pragma mark - Initialize and Set NSView
-		_view = [[View alloc] init];
+		_view = [[TCView alloc] init];
 		[_view setFrameSize: NSMakeSize(window.frame.size.width, window.frame.size.height)];
         
-#pragma mark - Initialize and Set NSText
-        
-        Text *label = [[Text alloc] init];
         
 #pragma mark - Initialize and Set NSTextField
         
-        _textField = [[TextField alloc] init];
+        _textField = [[TCTextField alloc] init];
         [_textField setFrame:NSMakeRect(
             10,
             window.frame.size.height-30-10-40, //window.frame.size.height-window.frame.size.height/100*22,
             window.frame.size.width/100*40,
             window.frame.size.height/100*12 //40
         )];
+    
+#pragma mark - Initialize and Set NSText
+        _label = [[TCText alloc] initWithFrame:NSMakeRect(
+                 10,
+                 window.frame.size.height-30-10-40, //window.frame.size.height-window.frame.size.height/100*22,
+                 window.frame.size.width/100*40,
+                 window.frame.size.height/100*12
+        )];
+        [_label setBoundsSize:NSMakeSize(_label.frame.size.width, _label.frame.size.height)];
         
 #pragma mark - Initialize and Set NSButton
-		_cancel = [[Button alloc] initWithRect: NSMakeRect(10, 10, 90, 40)];
-        _ok = [[Button alloc] initWithRect: NSMakeRect(window.frame.size.width-90-10, 10, 90, 40)];
+		_cancel = [[TCButton alloc] initWithRect: NSMakeRect(10, 10, 90, 40)];
+        _ok = [[TCButton alloc] initWithRect: NSMakeRect(window.frame.size.width-90-10, 10, 90, 40)];
 
         _cancel.title = @"Cancel";
         //_button.keyEquivalent = @"\r";
 		
 		_ok.title = @"Ok";
-        [_ok setTarget:label];
+        [_ok setTarget:_label];
         [_ok setAction:@selector(getText)];
 		//button1.keyEquivalent = @"\r";
 
 #pragma mark - Add View to NSView and NSWindow
-        
-        [_view addSubview: label];
-        [_view addSubview: _textField];
+        [_view addSubview: _label];
+        //[_view addSubview: _textField];
         [_view addSubview: _ok];
         [_view addSubview:_cancel];
 		
@@ -91,12 +92,13 @@
     exit(0);
 }
 
-- (NSSize)windowWillResize:(NSWindow *)sender
-                    toSize:(NSSize)frameSize {
+/* QUESTO È BUONO !!!!!!!!!!!!!!!
+- (NSSize)windowWillResize:(NSWindow *)sender toSize:(NSSize)frameSize {
     NSLog(@" 1 - %f", sender.frame.size.width);
-    uno = sender.frame.size.width;
+    //uno = sender.frame.size.width;
     return frameSize;
 }
+*/
 
 - (void)windowDidResize:(NSNotification *)notification {
 
@@ -113,11 +115,11 @@
     NSSize viewSize = NSMakeSize(window.frame.size.width+30, window.frame.size.height);
     [_view setFrameSize: viewSize];
     
-    NSPoint buttonOrigin = NSMakePoint(window.frame.size.width-90-10, 0+10);
+    NSPoint buttonOrigin = NSMakePoint(window.frame.size.width-90-10, 10);
     [_ok setFrameOrigin: buttonOrigin];
 
     
-    [self object: _textField          // da non - iniziale
+    [self object: _label               // da non - iniziale
           transform: textFieldSize    // da aggiornare - seguito
           window: window              // per le misure
     ];
@@ -125,18 +127,18 @@
 
 // ==============================================================================
 /// Trasforma la TextField
-- (void)object:(TextField *)iniziale transform:(NSSize)seguito window:(NSWindow *)win {
+- (void)object:(TCText *)object transform:(NSSize)seguito window:(NSWindow *)win {
     
-    //add+=1;
+    NSLog(@"textFieldSize.height = %f", textFieldSize.height);
     
     textFieldSize = NSMakeSize(win.frame.size.width/100*40, win.frame.size.height/100*12);
     textFieldPoint = NSMakePoint(win.frame.size.width/100*2, win.frame.size.height-30-10-textFieldSize.height);
     
     NSLog(@"%f", win.frame.size.width/100);
-    
-    [_textField setFrameSize: textFieldSize];
-    [_textField setFrameOrigin: textFieldPoint];
-    
+
+    [object setFrameSize:NSMakeSize(win.frame.size.width/100*40, win.frame.size.height/100*12)];
+    [object setConstrainedFrameSize:NSMakeSize(win.frame.size.width/100*40, win.frame.size.height/100*12)];
+    [object setFrameOrigin: NSMakePoint(textFieldPoint.x, win.frame.size.height-30-10-object.frame.size.height)];
     
 }
 

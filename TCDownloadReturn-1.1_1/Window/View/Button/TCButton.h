@@ -1,5 +1,5 @@
 #import <Cocoa/Cocoa.h>
 
-@interface Button : NSButton
+@interface TCButton : NSButton
 - (instancetype)initWithRect:(NSRect)rect;
 @end

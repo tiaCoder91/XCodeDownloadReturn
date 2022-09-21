@@ -1,6 +1,6 @@
-#import "Button.h"
+#import "TCButton.h"
 
-@implementation Button
+@implementation TCButton
 
 - (instancetype)init
 {

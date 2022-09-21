@@ -1,15 +1,13 @@
-//#import <Cocoa/Cocoa.h>
-#import "Window/Window.h"
+#import "Window/TCWindow.h"
 
 int main(int argc, const char* argv[]) {
-
-   NSLog(@"Hello world!");
+    
    NSApplication *app = [NSApplication sharedApplication];
 
-   Window *window;
-   window = [[Window alloc] init];
+   TCWindow *window;
+   window = [[TCWindow alloc] init];
    
    [app run];
-
+    
    return 0;
 }

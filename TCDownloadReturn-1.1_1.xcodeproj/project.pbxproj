@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		120A955E28D5EB36001F05C7 /* Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 120A955D28D5EB36001F05C7 /* Text.m */; };
+		120A955E28D5EB36001F05C7 /* TCText.m in Sources */ = {isa = PBXBuildFile; fileRef = 120A955D28D5EB36001F05C7 /* TCText.m */; };
 		124F30C328CD3D62001FF374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 124F30C228CD3D62001FF374 /* Assets.xcassets */; };
 		124F30C628CD3D62001FF374 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F30C428CD3D62001FF374 /* MainMenu.xib */; };
 		124F30D328CD3D62001FF374 /* TCDownloadReturn_1_1_1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F30D228CD3D62001FF374 /* TCDownloadReturn_1_1_1Tests.m */; };
 		124F30DD28CD3D62001FF374 /* TCDownloadReturn_1_1_1UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F30DC28CD3D62001FF374 /* TCDownloadReturn_1_1_1UITests.m */; };
 		124F30DF28CD3D62001FF374 /* TCDownloadReturn_1_1_1UITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F30DE28CD3D62001FF374 /* TCDownloadReturn_1_1_1UITestsLaunchTests.m */; };
 		124F311028CD3D87001FF374 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F30FA28CD3D87001FF374 /* main.m */; };
-		124F311128CD3D87001FF374 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310028CD3D87001FF374 /* TextField.m */; };
-		124F311228CD3D87001FF374 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310128CD3D87001FF374 /* Button.m */; };
-		124F311328CD3D87001FF374 /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310528CD3D87001FF374 /* View.m */; };
-		124F311528CD3D87001FF374 /* Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310728CD3D87001FF374 /* Window.m */; };
+		124F311128CD3D87001FF374 /* TCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310028CD3D87001FF374 /* TCTextField.m */; };
+		124F311228CD3D87001FF374 /* TCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310128CD3D87001FF374 /* TCButton.m */; };
+		124F311328CD3D87001FF374 /* TCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310528CD3D87001FF374 /* TCView.m */; };
+		124F311528CD3D87001FF374 /* TCWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310728CD3D87001FF374 /* TCWindow.m */; };
+		128CAC0428DA700100362370 /* TCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 128CAC0328DA700100362370 /* TCTask.m */; };
 		128D28E628D76B3200194BEC /* Interprete1.0.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D28E428D76B3100194BEC /* Interprete1.0.m */; };
+		12FC3E9E28DB14920059471A /* TCThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FC3E9D28DB14920059471A /* TCThread.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		120A955C28D5EB36001F05C7 /* Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
-		120A955D28D5EB36001F05C7 /* Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Text.m; sourceTree = "<group>"; };
+		120A955C28D5EB36001F05C7 /* TCText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCText.h; sourceTree = "<group>"; };
+		120A955D28D5EB36001F05C7 /* TCText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCText.m; sourceTree = "<group>"; };
 		124F30BC28CD3D5E001FF374 /* TCDownloadReturn-1.1_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TCDownloadReturn-1.1_1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		124F30C228CD3D62001FF374 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		124F30C528CD3D62001FF374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -51,16 +53,20 @@
 		124F30DC28CD3D62001FF374 /* TCDownloadReturn_1_1_1UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCDownloadReturn_1_1_1UITests.m; sourceTree = "<group>"; };
 		124F30DE28CD3D62001FF374 /* TCDownloadReturn_1_1_1UITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCDownloadReturn_1_1_1UITestsLaunchTests.m; sourceTree = "<group>"; };
 		124F30FA28CD3D87001FF374 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		124F30FE28CD3D87001FF374 /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
-		124F310028CD3D87001FF374 /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
-		124F310128CD3D87001FF374 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
-		124F310228CD3D87001FF374 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
-		124F310328CD3D87001FF374 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
-		124F310428CD3D87001FF374 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
-		124F310528CD3D87001FF374 /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
-		124F310728CD3D87001FF374 /* Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Window.m; sourceTree = "<group>"; };
+		124F30FE28CD3D87001FF374 /* TCWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCWindow.h; sourceTree = "<group>"; };
+		124F310028CD3D87001FF374 /* TCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCTextField.m; sourceTree = "<group>"; };
+		124F310128CD3D87001FF374 /* TCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCButton.m; sourceTree = "<group>"; };
+		124F310228CD3D87001FF374 /* TCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCView.h; sourceTree = "<group>"; };
+		124F310328CD3D87001FF374 /* TCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCButton.h; sourceTree = "<group>"; };
+		124F310428CD3D87001FF374 /* TCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTextField.h; sourceTree = "<group>"; };
+		124F310528CD3D87001FF374 /* TCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCView.m; sourceTree = "<group>"; };
+		124F310728CD3D87001FF374 /* TCWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCWindow.m; sourceTree = "<group>"; };
+		128CAC0228DA700100362370 /* TCTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCTask.h; sourceTree = "<group>"; };
+		128CAC0328DA700100362370 /* TCTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCTask.m; sourceTree = "<group>"; };
 		128D28E428D76B3100194BEC /* Interprete1.0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interprete1.0.m; sourceTree = "<group>"; };
 		128D28E528D76B3200194BEC /* Interprete1.0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interprete1.0.h; sourceTree = "<group>"; };
+		12FC3E9C28DB14920059471A /* TCThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCThread.h; sourceTree = "<group>"; };
+		12FC3E9D28DB14920059471A /* TCThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCThread.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,10 +97,10 @@
 		120A956028D5F314001F05C7 /* Text */ = {
 			isa = PBXGroup;
 			children = (
-				120A955C28D5EB36001F05C7 /* Text.h */,
-				120A955D28D5EB36001F05C7 /* Text.m */,
-				124F310428CD3D87001FF374 /* TextField.h */,
-				124F310028CD3D87001FF374 /* TextField.m */,
+				120A955C28D5EB36001F05C7 /* TCText.h */,
+				120A955D28D5EB36001F05C7 /* TCText.m */,
+				124F310428CD3D87001FF374 /* TCTextField.h */,
+				124F310028CD3D87001FF374 /* TCTextField.m */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -102,8 +108,8 @@
 		120A956128D5F361001F05C7 /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				124F310328CD3D87001FF374 /* Button.h */,
-				124F310128CD3D87001FF374 /* Button.m */,
+				124F310328CD3D87001FF374 /* TCButton.h */,
+				124F310128CD3D87001FF374 /* TCButton.m */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -131,7 +137,7 @@
 		124F30BE28CD3D5E001FF374 /* TCDownloadReturn-1.1_1 */ = {
 			isa = PBXGroup;
 			children = (
-				128D28E328D76AFF00194BEC /* Interprete-1.0 */,
+				128ACB7628DBAC4F00E8E4AA /* Library */,
 				124F30FA28CD3D87001FF374 /* main.m */,
 				124F30FC28CD3D87001FF374 /* Window */,
 				124F30C228CD3D62001FF374 /* Assets.xcassets */,
@@ -161,8 +167,8 @@
 		124F30FC28CD3D87001FF374 /* Window */ = {
 			isa = PBXGroup;
 			children = (
-				124F30FE28CD3D87001FF374 /* Window.h */,
-				124F310728CD3D87001FF374 /* Window.m */,
+				124F30FE28CD3D87001FF374 /* TCWindow.h */,
+				124F310728CD3D87001FF374 /* TCWindow.m */,
 				124F30FF28CD3D87001FF374 /* View */,
 			);
 			path = Window;
@@ -171,12 +177,40 @@
 		124F30FF28CD3D87001FF374 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				124F310228CD3D87001FF374 /* View.h */,
-				124F310528CD3D87001FF374 /* View.m */,
+				124F310228CD3D87001FF374 /* TCView.h */,
+				124F310528CD3D87001FF374 /* TCView.m */,
 				120A956128D5F361001F05C7 /* Button */,
 				120A956028D5F314001F05C7 /* Text */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		128ACB7628DBAC4F00E8E4AA /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				128ACB7828DBAD9A00E8E4AA /* TCTask */,
+				128ACB7728DBAD8B00E8E4AA /* TCThread */,
+				128D28E328D76AFF00194BEC /* Interprete-1.0 */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		128ACB7728DBAD8B00E8E4AA /* TCThread */ = {
+			isa = PBXGroup;
+			children = (
+				12FC3E9C28DB14920059471A /* TCThread.h */,
+				12FC3E9D28DB14920059471A /* TCThread.m */,
+			);
+			path = TCThread;
+			sourceTree = "<group>";
+		};
+		128ACB7828DBAD9A00E8E4AA /* TCTask */ = {
+			isa = PBXGroup;
+			children = (
+				128CAC0228DA700100362370 /* TCTask.h */,
+				128CAC0328DA700100362370 /* TCTask.m */,
+			);
+			path = TCTask;
 			sourceTree = "<group>";
 		};
 		128D28E328D76AFF00194BEC /* Interprete-1.0 */ = {
@@ -317,13 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				124F311528CD3D87001FF374 /* Window.m in Sources */,
+				124F311528CD3D87001FF374 /* TCWindow.m in Sources */,
 				128D28E628D76B3200194BEC /* Interprete1.0.m in Sources */,
-				120A955E28D5EB36001F05C7 /* Text.m in Sources */,
-				124F311128CD3D87001FF374 /* TextField.m in Sources */,
-				124F311228CD3D87001FF374 /* Button.m in Sources */,
+				120A955E28D5EB36001F05C7 /* TCText.m in Sources */,
+				124F311128CD3D87001FF374 /* TCTextField.m in Sources */,
+				124F311228CD3D87001FF374 /* TCButton.m in Sources */,
+				128CAC0428DA700100362370 /* TCTask.m in Sources */,
+				12FC3E9E28DB14920059471A /* TCThread.m in Sources */,
 				124F311028CD3D87001FF374 /* main.m in Sources */,
-				124F311328CD3D87001FF374 /* View.m in Sources */,
+				124F311328CD3D87001FF374 /* TCView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
