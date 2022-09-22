@@ -8,8 +8,8 @@
 #import "TCText.h"
 
 @interface TCText()
-@property (nonatomic) TCTask *task;
 @property (nonatomic) TCThread *thread;
+@property (nonatomic) TCText *text;
 @end
 
 @implementation TCText
@@ -24,14 +24,13 @@
         //self.maxSize = NSMakeSize(200, 60);
         //self.drawsBackground = false;
         self.textColor = [NSColor blueColor];
-        self.font = [NSFont systemFontOfSize:20.0];
+        self.font = [NSFont systemFontOfSize:12.0];
         [self setDelegate:self];
         //[self setEditable:NO];
         //[self setSelectable:NO];
         [self setString:@"Hello world."];
         
         _interprete = [[Interprete alloc] init];
-        _task = [[TCTask alloc] init];
         _thread = [[TCThread alloc] init];
     }
     return self;
@@ -51,9 +50,10 @@
     [_thread stop];
 }
 
+
 - (void)textDidChange:(NSNotification *)notification {
-    TCText *text = [notification object];
-    NSLog(@"notification: %@", text.string);
+    _text = [notification object];
+    NSLog(@"notification: %@", _text.string);
 }
 
 @end

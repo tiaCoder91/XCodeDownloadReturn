@@ -4,5 +4,5 @@
 #import "View/Text/TCText.h"
 
 @interface TCWindow : NSWindow <NSWindowDelegate> //NSApplicationDelegate
-
+- (instancetype)mainWindow;
 @end

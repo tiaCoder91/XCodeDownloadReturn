@@ -5,7 +5,7 @@
 //  Created by Mattia Leggieri on 21/09/22.
 //
 
-#import "TCTask.h"
+#import "../TCTask/TCTask.h"
 
 @interface TCThread : NSThread
 - (NSThread*)thread;

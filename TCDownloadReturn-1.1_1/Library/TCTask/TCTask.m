@@ -25,7 +25,13 @@
     NSString *script = [NSString stringWithFormat:@"#!/bin/bash\necho \"ok script da objective-c data.\"\ncd tmp\n/usr/local/bin/yt-dlp -f m4a --add-metadata --embed-thumbnail --ffmpeg-location /usr/local/bin https://www.youtube.com/watch?v=fD2UExUhq-s\nmv *.m4a ~/Desktop\nopen -a Music ~/Desktop/*.m4a"];
     
     NSData *data_script = [script dataUsingEncoding:NSUTF8StringEncoding];
-    [[NSFileManager defaultManager] createFileAtPath:[NSString stringWithFormat:@"/tmp/data_script.sh"] contents:data_script attributes:nil];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    if ([manager fileExistsAtPath:@"/tmp/data_script.sh"]) {
+        if ([manager removeItemAtPath:@"/tmp/data_script.sh" error:nil])
+            NSLog(@"File rimosso!");
+    }
+    
+    [manager createFileAtPath:[NSString stringWithFormat:@"/tmp/data_script.sh"] contents:data_script attributes:nil];
     
     NSTask *task = [[NSTask alloc] init];
     
