@@ -9,7 +9,7 @@
 #import "../../../Library/TCThread/TCThread.h"
 #import "../../../Library/TCTask/TCTask.h"
 
-@interface TCText : NSTextView <NSTextViewDelegate>
+@interface TCTextView : NSTextView <NSTextViewDelegate>
 @property (nonatomic) Interprete *interprete;
 - (void)getText;
 @end

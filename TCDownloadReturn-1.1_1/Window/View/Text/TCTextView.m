@@ -5,14 +5,14 @@
 //  Created by Mattia Leggieri on 17/09/22.
 //
 
-#import "TCText.h"
+#import "TCTextView.h"
 
-@interface TCText()
+@interface TCTextView()
 @property (nonatomic) TCThread *thread;
-@property (nonatomic) TCText *text;
+@property (nonatomic) TCTextView *text;
 @end
 
-@implementation TCText
+@implementation TCTextView
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
