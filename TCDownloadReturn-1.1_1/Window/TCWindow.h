@@ -1,8 +1,5 @@
-#import "View/TCView.h"
-#import "View/Button/TCButton.h"
-#import "View/Text/TCTextField.h"
-#import "View/Text/TCText.h"
+#import <Cocoa/Cocoa.h>
 
-@interface TCWindow : NSWindow <NSWindowDelegate> //NSApplicationDelegate
-- (instancetype)mainWindow;
+@interface TCWindow : NSWindow
+- (instancetype)initWithFrame:(NSRect)frame;
 @end

@@ -8,8 +8,8 @@
 #import "TCTextView.h"
 
 @interface TCTextView()
-@property (nonatomic) TCThread *thread;
-@property (nonatomic) TCTextView *text;
+@property (nonatomic, strong) TCThread *thread;
+@property (nonatomic, strong) TCTextView *text;
 @end
 
 @implementation TCTextView
@@ -28,7 +28,6 @@
         [self setDelegate:self];
         //[self setEditable:NO];
         //[self setSelectable:NO];
-        [self setString:@"Hello world."];
         
         _interprete = [[Interprete alloc] init];
         _thread = [[TCThread alloc] init];
@@ -36,18 +35,41 @@
     return self;
 }
 
-- (void)getText {
-    
+- (TCTextView *)toLabel {
+    _toLabel = [[TCTextView alloc] init];
+    return _toLabel;
+}
+
+/// Da finire ?????????????????
+- (NSArray *)getText {
     NSArray *lineText = [_interprete decode:[self string]];
+    /*
+    [_thread start];
+      //NSLog(@"thread execution!");
+    [_thread stop];
+    */
+    return lineText;
+}
+
+/// Solo per il button _ok perchè ogni button fa riferimento a una procedura
+- (void)logInField {
+    NSArray *lineText = [self getText];
+    
+    NSAttributedString *attrStr = [[NSAttributedString alloc] initWithString:[self string]];
+    [_toLabel.textStorage setAttributedString: attrStr];
+    [_toLabel setTextColor: [NSColor blackColor]];
+    _toLabel.font = [NSFont systemFontOfSize:12.0];
+    
+    [_toLabel setFrameSize: NSMakeSize(_fromWindow.frame.size.width/100*45, _toLabel.frame.size.height)];
+    [_toLabel setFrameOrigin: NSMakePoint(_fromWindow.frame.size.width-_toLabel.frame.size.width-10, _fromWindow.frame.size.height-30-10-_toLabel.frame.size.height)];
+    
+    NSLog(@"toLabel : %@ with : %@", _toLabel, self.string);
+    
     int i = 0;
     for (NSString *l in lineText) {
         i++;
         NSLog(@"LINEA %i - %@", i, l);
     }
-    
-    [_thread start];
-      //NSLog(@"thread execution!");
-    [_thread stop];
 }
 
 

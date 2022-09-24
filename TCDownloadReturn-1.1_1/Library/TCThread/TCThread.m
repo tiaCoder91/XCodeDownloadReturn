@@ -16,7 +16,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _task = [[TCTask alloc] init];
+        
     }
     return self;
 }
@@ -26,12 +26,12 @@
 - (void)start {
     _thread = [[NSThread alloc] initWithTarget:self selector:@selector(runloop) object:nil];
     if (![self.thread isExecuting]) {
-        self.thread.name = @"TCMainThread";
         [self.thread start];
     }
 }
 
 - (void)runloop {
+    _task = [[TCTask alloc] init];
     [_task saluto];
 }
 

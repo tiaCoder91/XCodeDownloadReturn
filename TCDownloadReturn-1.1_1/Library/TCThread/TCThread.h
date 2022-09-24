@@ -8,7 +8,6 @@
 #import "../TCTask/TCTask.h"
 
 @interface TCThread : NSThread
-- (NSThread*)thread;
 - (void)start;
 - (void)stop;
 @end

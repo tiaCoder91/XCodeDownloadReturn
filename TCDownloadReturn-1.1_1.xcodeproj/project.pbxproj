@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		120A955E28D5EB36001F05C7 /* TCText.m in Sources */ = {isa = PBXBuildFile; fileRef = 120A955D28D5EB36001F05C7 /* TCText.m */; };
+		120A955E28D5EB36001F05C7 /* TCTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 120A955D28D5EB36001F05C7 /* TCTextView.m */; };
 		124F30C328CD3D62001FF374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 124F30C228CD3D62001FF374 /* Assets.xcassets */; };
 		124F30C628CD3D62001FF374 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124F30C428CD3D62001FF374 /* MainMenu.xib */; };
 		124F30D328CD3D62001FF374 /* TCDownloadReturn_1_1_1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F30D228CD3D62001FF374 /* TCDownloadReturn_1_1_1Tests.m */; };
@@ -18,6 +18,7 @@
 		124F311228CD3D87001FF374 /* TCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310128CD3D87001FF374 /* TCButton.m */; };
 		124F311328CD3D87001FF374 /* TCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310528CD3D87001FF374 /* TCView.m */; };
 		124F311528CD3D87001FF374 /* TCWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 124F310728CD3D87001FF374 /* TCWindow.m */; };
+		128ACBB628DDC05F00E8E4AA /* TCWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 128ACBB528DDC05F00E8E4AA /* TCWindowController.m */; };
 		128CAC0428DA700100362370 /* TCTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 128CAC0328DA700100362370 /* TCTask.m */; };
 		128D28E628D76B3200194BEC /* Interprete1.0.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D28E428D76B3100194BEC /* Interprete1.0.m */; };
 		12FC3E9E28DB14920059471A /* TCThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FC3E9D28DB14920059471A /* TCThread.m */; };
@@ -41,8 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		120A955C28D5EB36001F05C7 /* TCText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCText.h; sourceTree = "<group>"; };
-		120A955D28D5EB36001F05C7 /* TCText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCText.m; sourceTree = "<group>"; };
+		120A955C28D5EB36001F05C7 /* TCTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCTextView.h; sourceTree = "<group>"; };
+		120A955D28D5EB36001F05C7 /* TCTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCTextView.m; sourceTree = "<group>"; };
 		124F30BC28CD3D5E001FF374 /* TCDownloadReturn-1.1_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TCDownloadReturn-1.1_1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		124F30C228CD3D62001FF374 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		124F30C528CD3D62001FF374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -61,6 +62,8 @@
 		124F310428CD3D87001FF374 /* TCTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCTextField.h; sourceTree = "<group>"; };
 		124F310528CD3D87001FF374 /* TCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCView.m; sourceTree = "<group>"; };
 		124F310728CD3D87001FF374 /* TCWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCWindow.m; sourceTree = "<group>"; };
+		128ACBB428DDC05F00E8E4AA /* TCWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCWindowController.h; sourceTree = "<group>"; };
+		128ACBB528DDC05F00E8E4AA /* TCWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCWindowController.m; sourceTree = "<group>"; };
 		128CAC0228DA700100362370 /* TCTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCTask.h; sourceTree = "<group>"; };
 		128CAC0328DA700100362370 /* TCTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCTask.m; sourceTree = "<group>"; };
 		128D28E428D76B3100194BEC /* Interprete1.0.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interprete1.0.m; sourceTree = "<group>"; };
@@ -97,8 +100,8 @@
 		120A956028D5F314001F05C7 /* Text */ = {
 			isa = PBXGroup;
 			children = (
-				120A955C28D5EB36001F05C7 /* TCText.h */,
-				120A955D28D5EB36001F05C7 /* TCText.m */,
+				120A955C28D5EB36001F05C7 /* TCTextView.h */,
+				120A955D28D5EB36001F05C7 /* TCTextView.m */,
 				124F310428CD3D87001FF374 /* TCTextField.h */,
 				124F310028CD3D87001FF374 /* TCTextField.m */,
 			);
@@ -167,6 +170,8 @@
 		124F30FC28CD3D87001FF374 /* Window */ = {
 			isa = PBXGroup;
 			children = (
+				128ACBB428DDC05F00E8E4AA /* TCWindowController.h */,
+				128ACBB528DDC05F00E8E4AA /* TCWindowController.m */,
 				124F30FE28CD3D87001FF374 /* TCWindow.h */,
 				124F310728CD3D87001FF374 /* TCWindow.m */,
 				124F30FF28CD3D87001FF374 /* View */,
@@ -351,9 +356,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				128ACBB628DDC05F00E8E4AA /* TCWindowController.m in Sources */,
 				124F311528CD3D87001FF374 /* TCWindow.m in Sources */,
 				128D28E628D76B3200194BEC /* Interprete1.0.m in Sources */,
-				120A955E28D5EB36001F05C7 /* TCText.m in Sources */,
+				120A955E28D5EB36001F05C7 /* TCTextView.m in Sources */,
 				124F311128CD3D87001FF374 /* TCTextField.m in Sources */,
 				124F311228CD3D87001FF374 /* TCButton.m in Sources */,
 				128CAC0428DA700100362370 /* TCTask.m in Sources */,

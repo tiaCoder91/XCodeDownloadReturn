@@ -5,12 +5,13 @@
 //  Created by Mattia Leggieri on 23/09/22.
 //
 
-#import <Foundation/Foundation.h>
+#import "View/TCView.h"
+#import "View/Button/TCButton.h"
+#import "View/Text/TCTextField.h"
+#import "View/Text/TCTextView.h"
+#import "TCWindow.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-@interface TCWindowController : NSObject
-
+@interface TCWindowController : NSObject <NSWindowDelegate>
+- (instancetype)mainWindow;
 @end
 
-NS_ASSUME_NONNULL_END

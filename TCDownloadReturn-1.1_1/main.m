@@ -1,10 +1,10 @@
-#import "Window/TCWindow.h"
+#import "Window/TCWindowController.h"
 
 int main(int argc, const char* argv[]) {
     
    NSApplication *app = [NSApplication sharedApplication];
 
-   TCWindow *window = [[TCWindow alloc] init];
+   TCWindowController *window = [[TCWindowController alloc] init];
    [window mainWindow];
     
    [app run];
